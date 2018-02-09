@@ -150,6 +150,20 @@ public class SinglyLinkedList {
 		}
 		return false;
 	}
+	//To find middle node in singly linked list
+	
+	public static ListNode findMiddle(ListNode head) {
+		if(head == null) {
+			return null;
+		}
+		ListNode slowPtr = head;
+		ListNode fastPtr = head;
+		while(fastPtr != null && fastPtr.next != null) {
+			slowPtr = slowPtr.next;
+			fastPtr = fastPtr.next.next;
+		}
+		return slowPtr;
+	}
 	
 	public static void main(String[] args) {
 		
