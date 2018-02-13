@@ -165,6 +165,21 @@ public class SinglyLinkedList {
 		return slowPtr;
 	}
 	
+	//remove duplicates from singly linked list
+	
+	public static void removeDuplicate(ListNode head) {
+		 if(head == null) {
+			return; 
+		 }
+		 ListNode current = head;
+		 while(current != null && current.next !=null) {
+			 if(current.data == current.next.data) {
+				 current.next = current.next.next;
+			 }else {
+				 current = current.next;
+			 }
+		 }
+	}
 	public static void main(String[] args) {
 		
 		ListNode head= new ListNode(10);
